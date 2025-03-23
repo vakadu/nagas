@@ -6,7 +6,8 @@
 		"dev": "turbo run dev",
 		"check-types": "turbo run check-types",
 		"lint": "ultracite lint",
-		"format": "ultracite format"
+		"format": "ultracite format",
+		"prepare": "husky"
 	},
 	"husky": {
 		"hooks": {
