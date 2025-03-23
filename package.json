@@ -1,20 +1,44 @@
 {
-  "name": "with-tailwind",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "check-types": "turbo run check-types",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
-  },
-  "devDependencies": {
-    "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "turbo": "^2.4.4"
-  },
-  "packageManager": "pnpm@8.15.6",
-  "engines": {
-    "node": ">=18"
-  }
+	"name": "with-tailwind",
+	"private": true,
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev",
+		"check-types": "turbo run check-types",
+		"lint": "ultracite lint",
+		"format": "ultracite format"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged --allow-empty"
+		}
+	},
+	"lint-staged": {
+		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+			"biome check --files-ignore-unknown=true",
+			"biome check --write --no-errors-on-unmatched",
+			"biome check --write --organize-imports-enabled=false --no-errors-on-unmatched",
+			"biome check --write --unsafe --no-errors-on-unmatched",
+			"biome format --write --no-errors-on-unmatched",
+			"biome lint --write --no-errors-on-unmatched"
+		]
+	},
+	"devDependencies": {
+		"turbo": "^2.4.4",
+		"@biomejs/biome": "1.9.4",
+		"@commitlint/cli": "^19.7.1",
+		"@commitlint/config-conventional": "^19.7.1",
+		"@repo/typescript-config": "workspace:*",
+		"@turbo/gen": "^2.4.4",
+		"@types/node": "^22.13.9",
+		"tsup": "^8.4.0",
+		"prisma": "latest",
+		"tsx": "4.19.1",
+		"ultracite": "^4.1.19",
+		"husky": "^9.1.7"
+	},
+	"packageManager": "pnpm@8.15.6",
+	"engines": {
+		"node": ">=18"
+	}
 }
