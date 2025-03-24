@@ -1,0 +1,35 @@
+import { env } from "../../env";
+
+export const siteConfig = {
+	title: "Vinod Kumar | Front-end developer",
+	description:
+		"Hello, I'm Michał. I am front-end developer from Poland. I enjoy building sites and apps. My focus is React (Next.js).",
+	keywords: [
+		"Front-end developer",
+		"App Developer",
+		"Mobile Developer",
+		"India",
+		"React",
+		"React Native",
+		"Expo",
+		"App Development",
+		"Mobile Development",
+		"Next.js",
+		"Web development",
+		"Front-end",
+		"UI/UX",
+		"Responsive design",
+		"JavaScript",
+		"HTML",
+		"CSS",
+		"Portfolio",
+		"Projects",
+		"Website",
+		"Web applications",
+		"Developer",
+		"Code",
+		"Programming",
+		"Tech enthusiast",
+	],
+	url: env.SITE_URL || "https://example.com",
+};
